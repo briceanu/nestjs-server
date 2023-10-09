@@ -30,6 +30,7 @@ export class AuthService {
 
     const jwtOptions = {
       secret: this.configService.get<string>('JWT_SECRET'),
+      expiresIn: '60s',
     };
 
     if (user && (await bcrypt.compare(password, user.password))) {

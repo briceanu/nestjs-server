@@ -40,6 +40,7 @@ export class AuthGuard implements CanActivate {
       if (!user) {
         throw new ForbiddenException('User not found');
       }
+
       request.user = user;
       return true;
     } catch {
